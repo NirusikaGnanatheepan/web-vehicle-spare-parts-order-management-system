@@ -55,7 +55,19 @@ The database will be created automatically on first run.
    ```
 4. Access the application at: `http://localhost:8080`
 
-## Key Features
+
+   ## My Contribution
+
+I worked on the Supplier Management module of this project. My contribution included:
+
+- Developing supplier management functionality
+- Implementing CRUD operations for supplier records
+- Connecting supplier data with the MySQL database
+- Working with Spring Boot controllers, services, repositories, and entity classes
+- Supporting the later refactoring of supplier-related functionality into the customer management workflow used in the final system
+
+
+  ## Key Features
 
 ### Customer Management
 - View all customers in a dashboard
