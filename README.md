@@ -1,10 +1,10 @@
-# Web Based Order Management System
+# Vehicle Spare Parts Management System
 
 A Spring Boot application for managing customer orders, invoices, and payments.
 
 ## Overview
 
-This system has been transformed from a supplier management system to a comprehensive order management platform. It allows you to:
+This system is a web-based vehicle spare parts management platform designed to manage customers, orders, invoices, payments, and inventory-related workflows.
 
 - **Manage Customers**: Create, update, view, and delete customer records
 - **Track Orders**: Monitor purchase orders with status tracking and delivery information
@@ -32,7 +32,9 @@ The application uses MySQL database.
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/order_management_db
 spring.datasource.username=root
-spring.datasource.password=YOUR_PASSWORD
+spring.datasource.password=${DB_PASSWORD}
+
+For security, the database password should be provided through the `DB_PASSWORD` environment variable instead of storing it directly in the source code.
 ```
 
 ### Database Files Included
