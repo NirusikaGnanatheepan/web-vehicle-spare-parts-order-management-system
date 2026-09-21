@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Check Payments - Order Management</title>
+  <link rel="stylesheet" href="/css/app.css"/>
+  <script defer src="/js/app.js"></script>
+</head>
+<body>
+  <div class="container">
+  <h1 class="title">Invoices & Payments</h1>
+  <div class="toolbar">
+    <a class="btn" href="/customers/dashboard">Back to Dashboard</a>
+  </div>
+  <table>
+    <thead><tr><th>ID</th><th>Order</th><th>Amount</th><th>Status</th><th>Payment Date</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr th:each="inv : ${invoices}">
+        <td th:text="${inv.id}">1</td>
+        <td th:text="${inv.order.id}">1</td>
+        <td th:text="${inv.amount}">100.0</td>
+        <td th:text="${inv.paymentStatus}">PENDING</td>
+        <td th:text="${inv.paymentDate}">-</td>
+        <td>
+          <form th:action="@{/payments/mark-paid}" method="post" style="display:inline">
+            <input type="hidden" name="id" th:value="${inv.id}"/>
+            <button class="btn btn-primary" type="submit">Mark Paid</button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</body>
+</html>

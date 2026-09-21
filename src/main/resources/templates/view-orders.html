@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>View Orders - Order Management</title>
+  <link rel="stylesheet" href="/css/app.css"/>
+  <script defer src="/js/app.js"></script>
+</head>
+<body>
+  <div class="container">
+  <h1 class="title">Purchase Orders</h1>
+  <div class="toolbar">
+    <a class="btn" href="/customers/dashboard">Back to Dashboard</a>
+  </div>
+  <table>
+    <thead><tr><th>ID</th><th>Date</th><th>Status</th><th>Tracking</th><th>Customer</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr th:each="o : ${orders}">
+        <td th:text="${o.id}">1</td>
+        <td th:text="${o.orderDate}">2025-01-01</td>
+        <td th:text="${o.status}">NEW</td>
+        <td th:text="${o.trackingNumber}">-</td>
+        <td th:text="${o.customer.name}">Customer</td>
+        <td>
+          <a class="btn" th:href="@{/orders/edit/{id}(id=${o.id})}">Update Delivery</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</body>
+</html>
